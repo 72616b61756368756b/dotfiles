@@ -4,7 +4,6 @@ set -euo pipefail
 IFS=$'\n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 source $DIR/echos.sh
-
 TARGET="$HOME/.dotfiles"
 if [[ ! -d "$TARGET" ]]; then
   error "$TARGET does not exist."
