@@ -1,22 +1,20 @@
 # dotfiles
 
-# Z shell
+# Disclaimer:
+The project is offered “as-is”, without warranty, and disclaiming liability for damages resulting from using it. 
 
-* [Zsh](https://www.zsh.org/)
-* [Oh My ZSH!](https://ohmyz.sh/)
-* [GNU Make](https://www.gnu.org/software/make/)
-
-## Getting started
-
-``ln -s $PWD/.zshrc $HOME/.zshrc``
-
-or try it out if you have just cloned it (to your home directory) and uptake new changes:
-
-```shell
-source ~/.zshrc
+# Install
+```bash
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rakauchuk/dotfiles/master/install.sh)"
 ```
 
 # Colors
 
 * [Retro groove color scheme for Vim](https://github.com/morhetz/gruvbox)
 * [Ports of the gruvbox colorscheme](https://github.com/morhetz/gruvbox-contrib)
+
+# Tools
+
+* [Zsh](https://www.zsh.org/)
+* [Oh My ZSH!](https://ohmyz.sh/)
+* [GNU Make](https://www.gnu.org/software/make/)
