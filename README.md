@@ -5,7 +5,7 @@ The project is offered “as-is”, without warranty, and disclaiming liability 
 
 # Install
 ```bash
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rakauchuk/dotfiles/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rakauchuk/dotfiles/master/install.sh)"
 ```
 
 # Colors
