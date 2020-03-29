@@ -27,3 +27,5 @@ else
   eval "$CMD"
   print_result $? 'Done'
 fi
+running "Linking..."
+$DIR/.files/system/link.sh
