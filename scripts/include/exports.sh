@@ -64,39 +64,39 @@ if [[ -d "$HOME/.composer/vendor/bin" ]]; then
   export PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
-if [ -d "/usr/lib/jvm/java-7-openjdk" ]; then
+if [[ -d "/usr/lib/jvm/java-7-openjdk" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-7-openjdk"
 fi
 
-if [ -d "/usr/lib/jvm/java-7-oracle/jre" ]; then
+if [[ -d "/usr/lib/jvm/java-7-oracle/jre" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-7-oracle/jre"
 fi
 
-if [ -d "/usr/lib/jvm/java-7-oracle" ]; then
+if [[ -d "/usr/lib/jvm/java-7-oracle" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
 fi
 
-if [ -d "/usr/lib/jvm/java-8-oracle" ]; then
+if [[ -d "/usr/lib/jvm/java-8-oracle" ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
 fi
 
-if [ -d "/usr/lib/jvm/oraclejdk8-64" ]; then
+if [[ -d "/usr/lib/jvm/oraclejdk8-64" ]]; then
   export JAVA_HOME="/usr/lib/jvm/oraclejdk8-64"
 fi
 
-if [ -n "$JAVA_HOME" ]; then
+if [[ -n "$JAVA_HOME" ]]; then
   export JDK_HOME=$JAVA_HOME
   export JRE_HOME=$JAVA_HOME
   export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
-if [ -d "/opt/android-sdk-linux/" ]; then
+if [[ -d "/opt/android-sdk-linux/" ]]; then
   export ANDROID_SDK_ROOT="/opt/android-sdk-linux/"
 fi
-if [ -d "/android-sdk-linux/" ]; then
+if [[ -d "/android-sdk-linux/" ]]; then
   export ANDROID_SDK_ROOT="/android-sdk-linux/"
 fi
-if [ -n "$ANDROID_SDK_ROOT" ]; then
+if [[ -n "$ANDROID_SDK_ROOT" ]]; then
   export ANDROID_NDK=/opt/android-ndk/
   export ANDROID_HOME=$ANDROID_SDK_ROOT
   export PATH="$ANDROID_SDK_ROOT/tools/:$ANDROID_SDK_ROOT/platform-tools/:$PATH"

@@ -177,11 +177,11 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 alias flush="dscacheutil -flushcache && killall -HUP mDNSResponder"
 
 
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-  fi
-}
+# prompt_context() {
+#   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+#     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
+#   fi
+# }
 
 alias cp='cp -iv'       # Preferred 'cp' implementation
 alias mv='mv -iv'       # Preferred 'mv' implementation
@@ -266,7 +266,6 @@ function xphp() {
 if [[ $(uname -s) == "Darwin" ]]; then
   alias cpwd="pwd|tr -d '\n'|pbcopy"
   # Shortcuts
-  alias gg="$DOTFILES_GIT_GUI"
   alias cask="brew cask"
   alias chrome="open -a ~/Applications/Google\ Chrome.app"
   alias canary="open -a ~/Applications/Google\ Chrome\ Canary.app"
