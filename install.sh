@@ -27,6 +27,4 @@ if [[ ! -z "${CMD}" ]]; then
   eval "${CMD}"
   /bin/bash $TARGET/scripts/setup.sh "${TARGET}"
   echo 'Done'
-  exit 0
 fi
-exit 1
