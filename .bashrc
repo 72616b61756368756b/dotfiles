@@ -40,3 +40,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 if [[ -f "$HOME/.bash_aliases" ]]; then source $HOME/.bash_aliases; fi
+
+#if [[ -f "$HOME/.dotfiles/scripts/include/environment.sh" ]]; then source $HOME/.dotfiles/scripts/include/environment.sh; fi
+#if [[ -f "$HOME/.dotfiles/scripts/include/exports.sh" ]]; then source $HOME/.dotfiles/scripts/include/exports.sh; fi
