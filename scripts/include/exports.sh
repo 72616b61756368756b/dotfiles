@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
 
-#   Set default blocksize for ls, df, du
-#   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
-export BLOCKSIZE=1k
-
-#   Add color to terminal
-#   (this is all commented out as I use Mac Terminal Profiles)
-#   from http://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
+export BLOCKSIZE=1k # set default blocksize for ls, df, du
 export CLICOLOR=1
-# export LSCOLORS=ExFxBxDxCxegedabagacad
-
+export LSCOLORS=ExFxBxDxCxegedabagacad
 export EDITOR='vim'
 
 # Ignore commands that start with spaces and duplicates
@@ -49,6 +42,7 @@ export AWS_SECRET_ACCESS_KEY=""
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export PHP_IDE_CONFIG="serverName=localhost"
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
+export ARCHFLAGS="-arch x86_64"
 
 if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
