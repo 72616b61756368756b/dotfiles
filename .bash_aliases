@@ -1,5 +1,1 @@
-#!/usr/bin/env bash
-
-for FILE in $HOME/.dotfiles/scripts/include/{environment,exports,aliases}.sh; do
-  [[ -f "${FILE}" ]] && source "${FILE}"
-done
+if [[ -f "$HOME/.dotfiles/scripts/include/aliases.sh" ]]; then source $HOME/.dotfiles/scripts/include/aliases.sh; fi
