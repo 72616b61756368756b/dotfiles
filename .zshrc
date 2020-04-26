@@ -139,20 +139,7 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [[ -f "$HOME/.bash_aliases" ]]; then source $HOME/.bash_aliases; fi
+# if [[ -f "$HOME/.dotfiles/scripts/include/aliases.sh" ]]; then source $HOME/.dotfiles/scripts/include/aliases.sh; fi
 
-autoload -U promptinit; promptinit
-
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
-
-# change the path color
-zstyle :prompt:pure:path color white
-
-# change the color for both `prompt:success` and `prompt:error`
-zstyle ':prompt:pure:prompt:*' color cyan
-
-# turn on git stash status
-zstyle :prompt:pure:git:stash show yes
-
-prompt pure
+# if [[ -f "$HOME/.dotfiles/scripts/include/environment.sh" ]]; then source $HOME/.dotfiles/scripts/include/environment.sh; fi
+# if [[ -f "$HOME/.dotfiles/scripts/include/exports.sh" ]]; then source $HOME/.dotfiles/scripts/include/exports.sh; fi
