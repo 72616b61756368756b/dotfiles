@@ -32,5 +32,4 @@ fi
 if [[ $(echo $SHELL) == "/bin/zsh" ]]; then
   unsetopt multios
   autoload -U promptinit; promptinit
-  prompt pure
 fi
