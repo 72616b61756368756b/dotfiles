@@ -56,6 +56,12 @@ export NODE_REPL_MODE="sloppy"
 # shells instead of the default "last window closed" history
 # export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+export PHP_IDE_CONFIG="serverName=localhost"
+export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
+
 if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"
 fi
@@ -64,50 +70,5 @@ if [[ -d "$HOME/.composer/vendor/bin" ]]; then
   export PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
-if [[ -d "/usr/lib/jvm/java-7-openjdk" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-7-openjdk"
-fi
-
-if [[ -d "/usr/lib/jvm/java-7-oracle/jre" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-7-oracle/jre"
-fi
-
-if [[ -d "/usr/lib/jvm/java-7-oracle" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
-fi
-
-if [[ -d "/usr/lib/jvm/java-8-oracle" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
-fi
-
-if [[ -d "/usr/lib/jvm/oraclejdk8-64" ]]; then
-  export JAVA_HOME="/usr/lib/jvm/oraclejdk8-64"
-fi
-
-if [[ -n "$JAVA_HOME" ]]; then
-  export JDK_HOME=$JAVA_HOME
-  export JRE_HOME=$JAVA_HOME
-  export PATH="$JAVA_HOME/bin:$PATH"
-fi
-
-if [[ -d "/opt/android-sdk-linux/" ]]; then
-  export ANDROID_SDK_ROOT="/opt/android-sdk-linux/"
-fi
-if [[ -d "/android-sdk-linux/" ]]; then
-  export ANDROID_SDK_ROOT="/android-sdk-linux/"
-fi
-if [[ -n "$ANDROID_SDK_ROOT" ]]; then
-  export ANDROID_NDK=/opt/android-ndk/
-  export ANDROID_HOME=$ANDROID_SDK_ROOT
-  export PATH="$ANDROID_SDK_ROOT/tools/:$ANDROID_SDK_ROOT/platform-tools/:$PATH"
-fi
-
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
-
-#########################################################################
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export PHP_IDE_CONFIG="serverName=localhost"
-export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
