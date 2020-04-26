@@ -94,9 +94,6 @@ plugins=(
   extract
     # | `extract <filename>`    | Extracts the archive file you pass it               |
   docker
-  phing
-  symfony
-  symfony2
   tmux
     # ZSH_TMUX_AUTOSTART='true'             # Automatically starts tmux (default: false)
     # ZSH_TMUX_AUTOSTART_ONCE               # Autostart only if tmux hasn't been started previously (default: true)
@@ -148,3 +145,5 @@ autoload -U promptinit; promptinit
 
 # optionally define some options
 PURE_CMD_MAX_EXEC_TIME=10
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

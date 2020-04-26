@@ -40,18 +40,6 @@ export LESS_TERMCAP_me=$'\E[0m'    # end bold mode
 # Don't clear the screen after quitting a man page
 export MANPAGER='less -X'
 
-# Increase the maximum number of lines of history persisted
-# in the `Node` REPL history file (default value is 1000)
-# https://github.com/nodejs/node/blob/a85f4b5ce5791caf8caa9b31970313c6183a5499/doc/api/repl.markdown#persistent-history
-export NODE_REPL_HISTORY_SIZE=10000
-
-# Enable persistent REPL history for `node`.
-export NODE_REPL_HISTORY="~/.node_history"
-# Allow 32³ entries; the default is 1000.
-export NODE_REPL_HISTORY_SIZE="32768"
-# Use sloppy mode by default, matching web browsers.
-export NODE_REPL_MODE="sloppy"
-
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
 # export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
