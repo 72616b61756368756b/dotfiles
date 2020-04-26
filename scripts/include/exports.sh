@@ -54,7 +54,7 @@ export NODE_REPL_MODE="sloppy"
 
 # Make new shells get the history lines from all previous
 # shells instead of the default "last window closed" history
-export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 if [[ -d "$HOME/bin" ]]; then
   PATH="$HOME/bin:$PATH"

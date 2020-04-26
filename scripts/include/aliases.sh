@@ -117,10 +117,11 @@ alias l.d='ls -ld .* | grep "^d"'
 # Show human friendly numbers and colors
 alias df='df -h'
 alias du='du -h -d 2'
-if [[ $platform == 'linux' ]]; then
+
+if [[ $(uname -s) == 'linux' ]]; then
   alias ll='ls -alh --color=auto'
   alias ls='ls --color=auto'
-elif [[ $platform == 'darwin' ]]; then
+elif [[ $(uname -s) == 'Darwin' ]]; then
   alias ll='ls -alGh'
   alias ls='ls -Gh'
 fi
