@@ -25,7 +25,7 @@ if [[ ! -z "${CMD}" ]]; then
   echo "Installing..."
   mkdir -p "${TARGET}"
   eval "${CMD}"
-  /bin/bash $DIR/scripts/setup.sh "${TARGET}"
+  /bin/bash $TARGET/scripts/setup.sh "${TARGET}"
   echo 'Done'
   exit 0
 fi
