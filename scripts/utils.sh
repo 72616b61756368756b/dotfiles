@@ -42,3 +42,21 @@ _time() {
 _utc_date() {
     date -u "+%Y-%m-%d %H:%M:%S"
 }
+
+function _print_error() {
+    printf " $COL_RED[✖]$COL_RESET %s\n" "$1"
+}
+
+function _print_success() {
+    printf " $COL_GREEN[✔]$COL_RESET %s\n" "$1"
+}
+
+function _print_result() {
+    if [ "$1" -eq 0 ]; then
+        _print_success "$2"
+    else
+        _print_error "$2"
+    fi
+
+    return "$1"
+}

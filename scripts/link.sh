@@ -26,15 +26,15 @@ for location in $DOTFILES; do
             if [[ "$(readlink "$targetFile")" != "$sourceFile" ]]; then
                 _yesno "'$targetFile' already exists, do you want to overwrite it?"
                 if _yes; then
-                    _info "$targetFile → $sourceFile"
                     rm -f "$targetFile"
                     ln -s "$sourceFile" "$targetFile"
+                    _print_result $? "$targetFile → $sourceFile"
                 else
                     _error "$targetFile → $sourceFile"
                 fi
             else
                 # ln -s "$sourceFile" "$targetFile"
-                _info "$targetFile → $sourceFile"
+                _print_result $? "$targetFile → $sourceFile"
             fi
         fi
     fi
