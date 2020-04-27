@@ -21,7 +21,11 @@ for location in $DOTFILES; do
     backupFile="${backup}/${now}/${file}"
     if [[ -f "${sourceFile}" && -f "${targetFile}" ]]; then
         _info "Backing up '${targetFile}'..."
-        cp $(readlink "${targetFile}") ${backupFile}
+        if [[ -L "${targetFile}" ]]; then
+            cp $(readlink "${targetFile}") $backupFile
+        else
+            cp $targetFile $backupFile
+        fi
         _info "Backup is located at '${backupFile}'"
     fi
 done
