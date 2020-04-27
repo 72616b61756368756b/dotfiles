@@ -34,7 +34,7 @@ for location in $DOTFILES; do
                 fi
             else
                 # ln -s "$sourceFile" "$targetFile"
-                _print_result $? "$targetFile → $sourceFile"
+                _info "$targetFile → $sourceFile"
             fi
         fi
     fi
