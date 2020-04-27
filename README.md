@@ -8,6 +8,9 @@ The project is offered “as-is”, without warranty, and disclaiming liability 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rakauchuk/dotfiles/master/install.sh)"
 ```
 
+# Hosts
+* [Unified hosts file with base extensions](https://github.com/StevenBlack/hosts)
+
 # Colors
 
 * [Retro groove color scheme for Vim](https://github.com/morhetz/gruvbox)
