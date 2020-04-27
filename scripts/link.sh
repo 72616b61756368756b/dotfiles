@@ -27,7 +27,7 @@ for location in $DOTFILES; do
                 _yesno "'$targetFile' already exists, do you want to overwrite it?"
                 if _yes; then
                     rm -f "$targetFile"
-                    ln -s "$sourceFile" "$targetFile"
+                    ln -s "$sourceFile" "$targetFile" || true
                     _print_result $? "$targetFile → $sourceFile"
                 else
                     _error "$targetFile → $sourceFile"
