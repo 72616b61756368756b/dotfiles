@@ -69,45 +69,44 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    # | Command                 | Description                                         |
-    # | :-----------------------| :-------------------------------------------------- |
+  # | Command                 | Description                                         |
+  # | :-----------------------| :-------------------------------------------------- |
   command-not-found
   common-aliases
   iterm2
   history
   osx
-    # | `tab`                   | Open the current directory in a new tab             |
-    # | `split_tab`             | Split the current terminal tab horizontally         |
-    # | `vsplit_tab`            | Split the current terminal tab vertically           |
-    # | `ofd`                   | Open the current directory in a Finder window       |
-    # | `pfd`                   | Return the path of the frontmost Finder window      |
-    # | `pfs`                   | Return the current Finder selection                 |
-    # | `cdf`                   | `cd` to the current Finder directory                |
-    # | `pushdf`                | `pushd` to the current Finder directory             |
-    # | `quick-look`            | Quick-Look a specified file                         |
-    # | `man-preview`           | Open a specified man page in Preview app            |
-    # | `showfiles`             | Show hidden files                                   |
-    # | `hidefiles`             | Hide the hidden files                               |
-    # | `itunes`                | Control iTunes. Use `itunes -h` for usage details   |
-    # | `spotify`               | Control Spotify and search by artist, album, track… |
-    # | `rmdsstore`             | Remove .DS\_Store files recursively in a directory  |
+  # | `tab`                   | Open the current directory in a new tab             |
+  # | `split_tab`             | Split the current terminal tab horizontally         |
+  # | `vsplit_tab`            | Split the current terminal tab vertically           |
+  # | `ofd`                   | Open the current directory in a Finder window       |
+  # | `pfd`                   | Return the path of the frontmost Finder window      |
+  # | `pfs`                   | Return the current Finder selection                 |
+  # | `cdf`                   | `cd` to the current Finder directory                |
+  # | `pushdf`                | `pushd` to the current Finder directory             |
+  # | `quick-look`            | Quick-Look a specified file                         |
+  # | `man-preview`           | Open a specified man page in Preview app            |
+  # | `showfiles`             | Show hidden files                                   |
+  # | `hidefiles`             | Hide the hidden files                               |
+  # | `itunes`                | Control iTunes. Use `itunes -h` for usage details   |
+  # | `spotify`               | Control Spotify and search by artist, album, track… |
+  # | `rmdsstore`             | Remove .DS\_Store files recursively in a directory  |
   extract
-    # | `extract <filename>`    | Extracts the archive file you pass it               |
+  # | `extract <filename>`    | Extracts the archive file you pass it               |
   docker
   tmux
-    # ZSH_TMUX_AUTOSTART='true'             # Automatically starts tmux (default: false)
-    # ZSH_TMUX_AUTOSTART_ONCE               # Autostart only if tmux hasn't been started previously (default: true)
-    # ZSH_TMUX_AUTOCONNECT                  # Automatically connect to a previous session if it exits (default: true)
-    # ZSH_TMUX_AUTOQUIT                     # Automatically closes terminal once tmux exits (default: ZSH_TMUX_AUTOSTART)
-    # ZSH_TMUX_FIXTERM                      # Sets $TERM to 256-color term or not based on current terminal support
-    # ZSH_TMUX_ITERM2                       # Sets the -CC option for iTerm2 tmux integration (default: false)
-    # ZSH_TMUX_FIXTERM_WITHOUT_256COLOR     # $TERM to use for non 256-color terminals (default: screen)
-    # ZSH_TMUX_FIXTERM_WITH_256COLOR        # $TERM to use for 256-color terminals (default: screen-256color
+  # ZSH_TMUX_AUTOSTART='true'             # Automatically starts tmux (default: false)
+  # ZSH_TMUX_AUTOSTART_ONCE               # Autostart only if tmux hasn't been started previously (default: true)
+  # ZSH_TMUX_AUTOCONNECT                  # Automatically connect to a previous session if it exits (default: true)
+  # ZSH_TMUX_AUTOQUIT                     # Automatically closes terminal once tmux exits (default: ZSH_TMUX_AUTOSTART)
+  # ZSH_TMUX_FIXTERM                      # Sets $TERM to 256-color term or not based on current terminal support
+  # ZSH_TMUX_ITERM2                       # Sets the -CC option for iTerm2 tmux integration (default: false)
+  # ZSH_TMUX_FIXTERM_WITHOUT_256COLOR     # $TERM to use for non 256-color terminals (default: screen)
+  # ZSH_TMUX_FIXTERM_WITH_256COLOR        # $TERM to use for 256-color terminals (default: screen-256color
   tmuxinator
   tmux-cssh
-  vagrant
-  zsh-completions                           # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-  zsh-autosuggestions                       # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+  zsh-completions     # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+  zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
   zsh-syntax-highlighting
 )
 
@@ -139,7 +138,14 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# if [[ -f "$HOME/.dotfiles/scripts/include/aliases.sh" ]]; then source $HOME/.dotfiles/scripts/include/aliases.sh; fi
+if [[ -f "$HOME/.dotfiles/scripts/include/aliases.sh" ]]; then
+  source $HOME/.dotfiles/scripts/include/aliases.sh
+fi
 
-# if [[ -f "$HOME/.dotfiles/scripts/include/environment.sh" ]]; then source $HOME/.dotfiles/scripts/include/environment.sh; fi
-# if [[ -f "$HOME/.dotfiles/scripts/include/exports.sh" ]]; then source $HOME/.dotfiles/scripts/include/exports.sh; fi
+if [[ -f "$HOME/.dotfiles/scripts/include/exports.sh" ]]; then
+  source $HOME/.dotfiles/scripts/include/exports.sh
+fi
+
+unsetopt multios
+autoload -U promptinit
+promptinit
