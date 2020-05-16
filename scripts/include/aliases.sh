@@ -96,7 +96,7 @@ alias lrt='ls -1Fcrt'
 alias ls='ls -G'
 alias lsa='ls -lah'
 alias lt='ls -ltFh'
-alias less='less -FSRXc' # preferred 'less' implementation // less -r
+alias less='less -FSRXc'                          # preferred 'less' implementation // less -r
 alias lsock='sudo /usr/sbin/lsof -i -P'           # display open sockets
 alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP' # display only open UDP sockets
 alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP' # display only open TCP sockets
@@ -171,11 +171,6 @@ xphp() {
 	if ! $XDEBUG_ENABLED; then xoff; fi
 }
 
-# Download a web page and show info on what took time
-httpDebug() { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n"; }
-# Grabs headers from web page
-httpHeaders() { /usr/bin/curl -I -L $@; }
-
-# if [[ "$SSH_AUTH_SOCK" != "" ]] && [[ -f ~/.ssh/id_rsa ]] && [[ -x /usr/bin/ssh-add ]]; then
-#   ssh-add -l >/dev/null || alias ssh='(ssh-add -l >/dev/null || ssh-add) && unalias ssh; ssh'
-# fi
+if [[ "$SSH_AUTH_SOCK" != "" ]] && [[ -f ~/.ssh/id_rsa ]] && [[ -x /usr/bin/ssh-add ]]; then
+	ssh-add -l >/dev/null || alias ssh='(ssh-add -l >/dev/null || ssh-add) && unalias ssh; ssh'
+fi
