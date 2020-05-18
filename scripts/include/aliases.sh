@@ -100,7 +100,7 @@ alias less='less -FSRXc'                          # preferred 'less' implementat
 alias lsock='sudo /usr/sbin/lsof -i -P'           # display open sockets
 alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP' # display only open UDP sockets
 alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP' # display only open TCP sockets
-alias make='make --debug=b'
+alias make='make'                                 #  --debug=b
 alias man='nocorrect man'
 alias md='mkdir -p'
 alias mkdir='nocorrect mkdir'
