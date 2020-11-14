@@ -52,5 +52,8 @@ if [[ -d "$HOME/.composer/vendor/bin" ]]; then
   export PATH="$HOME/.composer/vendor/bin:$PATH"
 fi
 
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
