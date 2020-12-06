@@ -151,9 +151,7 @@ alias xoff='sudo phpdismod -s cli xdebug'
 alias xon='sudo phpenmod -s cli xdebug'
 alias zshrc='${=EDITOR} ~/.zshrc'
 alias :q='exit'
-alias ffmpeg='docker run -it --rm -v $(pwd):/ jrottenberg/ffmpeg'
 alias asciicast2gif='docker run -it --rm -v $(pwd):/ asciinema/asciicast2gif'
-alias netshoot='docker run -it --rm --privileged --net host -v /var/run/docker.sock:/var/run/docker.sock nicolaka/netshoot'
 
 xphp() {
 	(php -m | grep -q xdebug)

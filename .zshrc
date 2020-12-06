@@ -24,7 +24,7 @@ ZSH_THEME="agnoster"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -104,8 +104,8 @@ plugins=(
   # ZSH_TMUX_FIXTERM_WITHOUT_256COLOR     # $TERM to use for non 256-color terminals (default: screen)
   # ZSH_TMUX_FIXTERM_WITH_256COLOR        # $TERM to use for 256-color terminals (default: screen-256color
   zsh-completions # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
-  zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-  zsh-syntax-highlighting # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+  zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  zsh-syntax-highlighting # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -136,14 +136,10 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [[ -f "$HOME/.dotfiles/scripts/include/aliases.sh" ]]; then
-  source $HOME/.dotfiles/scripts/include/aliases.sh
+SCRIPTS_PATH=$HOME/.dotfiles/scripts/include
+if [[ -f "$SCRIPTS_PATH/aliases.sh" ]]; then
+  source $SCRIPTS_PATH/aliases.sh
 fi
-
-if [[ -f "$HOME/.dotfiles/scripts/include/exports.sh" ]]; then
-  source $HOME/.dotfiles/scripts/include/exports.sh
+if [[ -f "$SCRIPTS_PATH/exports.sh" ]]; then
+  source $SCRIPTS_PATH/exports.sh
 fi
-
-unsetopt multios
-autoload -U promptinit && promptinit
-autoload -U compinit && compinit

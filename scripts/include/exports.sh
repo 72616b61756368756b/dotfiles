@@ -37,23 +37,35 @@ export MANPAGER='less -X'
 # shells instead of the default "last window closed" history
 # export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
+export ARCHFLAGS="-arch x86_64"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 export PHP_IDE_CONFIG="serverName=localhost"
 export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
-export ARCHFLAGS="-arch x86_64"
 
-if [[ -d "$HOME/bin" ]]; then
-  PATH="$HOME/bin:$PATH"
-fi
+PATHS=(
+  "$HOME/bin"
+  "$HOME/.composer/vendor/bin" 
+  "/usr/local/sbin"
+  "/usr/local/opt/icu4c/bin"
+  "/usr/local/opt/icu4c/sbin"
+  "/usr/local/opt/ncurses/bin"
+  "/usr/local/opt/openssl@1.1/bin"
+  "/usr/local/opt/ruby/bin"
+  "/usr/local/opt/sqlite/bin"
+  )
 
-if [[ -d "$HOME/.composer/vendor/bin" ]]; then
-  export PATH="$HOME/.composer/vendor/bin:$PATH"
-fi
-
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+for i in ${!PATHS[@]};
+do
+  _PATH=${PATHS[$i]}
+  if [[ -d "$_PATH" ]]; then
+    export PATH="$_PATH:$PATH"
+  fi
+done
 
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
+
+unsetopt multios
+autoload -Uz promptinit; promptinit
+autoload -Uz compinit; compinit
