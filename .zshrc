@@ -136,13 +136,6 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    autoload -Uz compinit; compinit
-fi
-autoload -Uz promptinit; promptinit
-unsetopt multios
-
 rm -f ~/.zcompdump; compinit
 chmod go-w '/usr/local/share'
 compaudit | xargs chmod g-w,o-w
@@ -154,3 +147,7 @@ fi
 if [[ -f "$SCRIPTS_PATH/exports.sh" ]]; then
   source $SCRIPTS_PATH/exports.sh
 fi
+
+unsetopt multios
+autoload -Uz promptinit; promptinit
+autoload -Uz compinit; compinit
