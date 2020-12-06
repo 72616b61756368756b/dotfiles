@@ -136,6 +136,17 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit; compinit
+fi
+autoload -Uz promptinit; promptinit
+unsetopt multios
+
+rm -f ~/.zcompdump; compinit
+chmod go-w '/usr/local/share'
+compaudit | xargs chmod g-w,o-w
+
 SCRIPTS_PATH=$HOME/.dotfiles/scripts/include
 if [[ -f "$SCRIPTS_PATH/aliases.sh" ]]; then
   source $SCRIPTS_PATH/aliases.sh
