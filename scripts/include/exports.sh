@@ -65,7 +65,3 @@ done
 
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
-
-unsetopt multios
-autoload -Uz promptinit; promptinit
-autoload -Uz compinit; compinit

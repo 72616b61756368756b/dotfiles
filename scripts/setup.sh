@@ -11,6 +11,7 @@ source $DIR/utils.sh
 source $DIR/logger.sh
 
 _sudo
+/bin/bash $DIR/dependencies.sh
 /bin/bash $DIR/backup.sh "${TARGET}" "${DOTFILES}"
 /bin/bash $DIR/link.sh "${TARGET}" "${DOTFILES}"
 read -r -p "Do you wish to install a unified hosts file with base extensions? [y|N] " response
