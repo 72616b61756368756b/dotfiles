@@ -16,6 +16,16 @@ The project is offered “as-is”, without warranty, and disclaiming liability 
 * [Retro groove color scheme for Vim](https://github.com/morhetz/gruvbox)
 * [Ports of the gruvbox colorscheme](https://github.com/morhetz/gruvbox-contrib)
 
+# Fonts
+
+```bash
+git clone https://github.com/powerline/fonts.git --depth=1 && \
+cd fonts && \
+./install.sh && \
+cd .. && \
+rm -rf fonts
+```
+
 # Tools
 
 * [Zsh](https://www.zsh.org/)
