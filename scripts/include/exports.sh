@@ -40,28 +40,17 @@ export MANPAGER='less -X'
 export ARCHFLAGS="-arch x86_64"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-export PHP_IDE_CONFIG="serverName=localhost"
-export XDEBUG_CONFIG="remote_enable=1 remote_mode=req remote_port=9000 remote_host=127.0.0.1 remote_connect_back=0"
+if [[ -d "$HOME/.composer/vendor/bin" ]]; then
+    export PATH="$HOME/.composer/vendor/bin:$PATH"
+fi
 
-PATHS=(
-  "$HOME/bin"
-  "$HOME/.composer/vendor/bin" 
-  "/usr/local/sbin"
-  "/usr/local/opt/icu4c/bin"
-  "/usr/local/opt/icu4c/sbin"
-  "/usr/local/opt/ncurses/bin"
-  "/usr/local/opt/openssl@1.1/bin"
-  "/usr/local/opt/ruby/bin"
-  "/usr/local/opt/sqlite/bin"
-  )
+if [[ -d "$HOME/bin" ]]; then
+    export PATH="$HOME/bin:$PATH"
+fi
 
-for i in ${!PATHS[@]};
-do
-  _PATH=${PATHS[$i]}
-  if [[ -d "$_PATH" ]]; then
-    export PATH="$_PATH:$PATH"
-  fi
-done
+if [[ -d "/usr/local/sbin" ]]; then
+    export PATH="/usr/local/sbin:$PATH"
+fi
 
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
