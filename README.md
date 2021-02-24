@@ -8,6 +8,18 @@ The project is offered “as-is”, without warranty, and disclaiming liability 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/rakauchuk/dotfiles/master/install.sh)"
 ```
 
+# A Zsh prompt for Astronauts (denysdovhan/spaceship-prompt)
+Clone this repo:
+```zsh
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+```
+Symlink `spaceship.zsh-theme` to your oh-my-zsh custom themes directory:
+```zsh
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
+```
+Set `ZSH_THEME="spaceship"` in your `.zshrc`.
+```
+
 # Hosts
 * [Unified hosts file with base extensions](https://github.com/StevenBlack/hosts)
 
