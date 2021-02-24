@@ -103,7 +103,7 @@ plugins=(
   # ZSH_TMUX_ITERM2                       # Sets the -CC option for iTerm2 tmux integration (default: false)
   # ZSH_TMUX_FIXTERM_WITHOUT_256COLOR     # $TERM to use for non 256-color terminals (default: screen)
   # ZSH_TMUX_FIXTERM_WITH_256COLOR        # $TERM to use for 256-color terminals (default: screen-256color
-  zsh-completions # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+  zsh-completions # git clone https://github.com/zsh-users/zsh-completions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
   zsh-autosuggestions # git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   zsh-syntax-highlighting # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 )
@@ -136,9 +136,6 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-rm -f ~/.zcompdump; compinit
-chmod go-w '/usr/local/share'
-compaudit | xargs chmod g-w,o-w
 
 SCRIPTS_PATH=$HOME/.dotfiles/scripts/include
 if [[ -f "$SCRIPTS_PATH/aliases.sh" ]]; then
@@ -147,6 +144,10 @@ fi
 if [[ -f "$SCRIPTS_PATH/exports.sh" ]]; then
   source $SCRIPTS_PATH/exports.sh
 fi
+
+rm -f ~/.zcompdump; compinit
+chmod go-w '/usr/local/share'
+compaudit | xargs chmod g-w,o-w
 
 unsetopt multios
 autoload -Uz promptinit; promptinit
