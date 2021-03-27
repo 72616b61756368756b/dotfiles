@@ -10,6 +10,8 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="spaceship"
 
+SPACESHIP_EXEC_TIME_SHOW=false
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -136,19 +138,6 @@ export ARCHFLAGS="-arch x86_64"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+source $HOME/.dotfiles/scripts/include/aliases.sh
 
-SCRIPTS_PATH=$HOME/.dotfiles/scripts/include
-if [[ -f "$SCRIPTS_PATH/aliases.sh" ]]; then
-  source $SCRIPTS_PATH/aliases.sh
-fi
-if [[ -f "$SCRIPTS_PATH/exports.sh" ]]; then
-  source $SCRIPTS_PATH/exports.sh
-fi
-
-rm -f ~/.zcompdump; compinit
-chmod go-w '/usr/local/share'
-compaudit | xargs chmod g-w,o-w
-
-unsetopt multios
-autoload -Uz promptinit; promptinit
-autoload -Uz compinit; compinit
+source $HOME/.dotfiles/scripts/include/exports.sh
