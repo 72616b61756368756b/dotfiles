@@ -5,7 +5,6 @@ set -euo pipefail
 IFS=$'\n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 TARGET="${1:-}"
-DOTFILES="${2:-}"
 HOSTS=/etc/hosts
 START_LINE='###> unified hosts ###'
 END_LINE='###< unified hosts ###'
