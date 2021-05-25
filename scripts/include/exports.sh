@@ -52,8 +52,18 @@ if [[ -d "/usr/local/sbin" ]]; then
     export PATH="/usr/local/sbin:$PATH"
 fi
 
-export PATH=$PATH:$(go env GOPATH)/bin
-export GOPATH="$(go env GOPATH)"
+if [[ -e /usr/local/go/bin ]]; then
+  export PATH="/usr/local/go/bin:$PATH"
+fi
+
+if command -v go &> /dev/null; then
+  if [[ -e $(go env GOPATH) ]]; then
+    export GOPATH=$(go env GOPATH)
+  fi
+  if [[ -e $(go env GOPATH)/bin ]]; then
+    export PATH="$(go env GOPATH)/bin:$PATH"
+  fi
+fi
 
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
