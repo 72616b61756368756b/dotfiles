@@ -52,5 +52,10 @@ if [[ -d "/usr/local/sbin" ]]; then
     export PATH="/usr/local/sbin:$PATH"
 fi
 
+if [[ -d "$(go env GOPATH)/bin" ]]; then
+    export PATH="$(go env GOPATH)/bin:$PATH"
+fi
+
+
 PATH=$(echo -n $PATH | awk -v RS=: '{ if (!arr[$0]++) {printf("%s%s",!ln++?"":":",$0)}}')
 export PATH
